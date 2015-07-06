@@ -33,22 +33,27 @@ namespace UDPEchoClient
             byte[] sendPacket = Encoding.ASCII.GetBytes(args[1]);
 
             // Create UDPClient instance
-
             UdpClient client = new UdpClient();
 
             try
             {
                 // Send the echo string to the specified host and port
+                // If the args are omitted, then they are specified either in UdpClient ctor or
+                // in .Connect()
                 client.Send(sendPacket, sendPacket.Length, server, servPort);
 
                 Console.WriteLine("Sent {0} bytes to the server", sendPacket.Length);
 
-                // This IPEndPoint instance will be populated with the remote sendre's
+                // This IPEndPoint instance will be populated with the remote sender's
                 // endpoint information after the Receive() call
+                // Specifies an address and port combination. In this case it belongs to the UDPEchoServer
                 IPEndPoint remoteIPEndpoint = new IPEndPoint(IPAddress.Any, 0);
 
                 // Attemp echo reply receive
                 byte[] rcvPacket = client.Receive(ref remoteIPEndpoint);
+
+                // After .Receive() returns, the remoteIPEndpoint will contain the combination of
+                // of the address and port of the remote host that sent the packet just received.
 
                 Console.WriteLine("Received {0} bytes from {1}: {2}",
                     rcvPacket.Length, remoteIPEndpoint, Encoding.ASCII.GetString(rcvPacket));
