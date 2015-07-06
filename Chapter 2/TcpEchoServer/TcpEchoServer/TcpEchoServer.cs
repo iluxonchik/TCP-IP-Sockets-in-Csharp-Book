@@ -56,7 +56,7 @@ namespace TcpEchoServer
                     int totalBytesEchoed = 0;
                     while ((bytesRcvd = netSteram.Read(rcvBuffer, 0, rcvBuffer.Length)) > 0)
                     {
-                        Console.WriteLine("Recieved from client {0}: {1}", client.GetHashCode().ToString(), Encoding.ASCII.GetString(rcvBuffer, 0, bytesRcvd));
+                        Console.WriteLine("Recieved from client {0}: {1}", client.GetHashCode(), Encoding.ASCII.GetString(rcvBuffer, 0, bytesRcvd));
                         netSteram.Write(rcvBuffer, 0, bytesRcvd);
                         totalBytesEchoed += bytesRcvd;
                     }
