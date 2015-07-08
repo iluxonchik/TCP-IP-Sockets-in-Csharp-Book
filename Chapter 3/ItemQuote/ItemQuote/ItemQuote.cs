@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ItemQuote
 {
-    class ItemQuote
+   public class ItemQuote
     {
         public long ItemNumber { get; set; }
         public string ItemDescription { get; set; }
