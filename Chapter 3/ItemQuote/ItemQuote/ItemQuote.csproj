@@ -43,7 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Framer.cs" />
     <Compile Include="ItemQuote.cs" />
+    <Compile Include="ItemQuoteBinConst.cs" />
+    <Compile Include="ItemQuoteDecoder.cs" />
+    <Compile Include="ItemQuoteDecoderBin.cs" />
+    <Compile Include="ItemQuoteDecoderText.cs" />
+    <Compile Include="ItemQuoteEncoder.cs" />
+    <Compile Include="ItemQuoteEncoderBin.cs" />
+    <Compile Include="ItemQuoteEncoderText.cs" />
+    <Compile Include="ItemQuoteTextConst.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
