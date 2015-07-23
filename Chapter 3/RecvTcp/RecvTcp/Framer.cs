@@ -30,7 +30,7 @@ namespace Framer
                 {
                     int tokenLength = currentToken.Length - delimiter.Length;
                     byte[] token = new byte[tokenLength];
-                    Array.Copy(currentToken, token, tokenLength);
+                    Array.Copy(currentToken, 0, token, 0, tokenLength);
                     return token;
                 }
             } while ((nextByte = input.ReadByte()) != -1);
